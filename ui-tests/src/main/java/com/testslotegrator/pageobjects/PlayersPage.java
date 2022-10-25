@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import java.time.Duration;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,7 +13,7 @@ import java.util.stream.Collectors;
 import static org.awaitility.Awaitility.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PlayersPage {
+public class PlayersPage extends BasePage {
 
     private final By table = By.xpath("//table");
     private WebDriver driver;
@@ -20,7 +21,7 @@ public class PlayersPage {
     private int position;
 
     public PlayersPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public MainPage checkMainPage() {

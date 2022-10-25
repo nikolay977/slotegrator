@@ -1,7 +1,9 @@
 package com.testslotegrator.client;
 
+import com.testslotegrator.util.UiConfig;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
+import org.aeonbits.owner.ConfigFactory;
 
 import java.util.Map;
 
@@ -9,13 +11,11 @@ import static io.restassured.http.ContentType.JSON;
 
 public class ApiClient {
 
-    private static String BASE_URI = "http://test-api.d6.dev.devcaz.com";
-    private static String BASE_PATH = "/v2";
-
+    public static UiConfig cfg = ConfigFactory.create(UiConfig.class);
     public RequestSpecBuilder getRequestSpecificationBuilder() {
         return new RequestSpecBuilder()
-                .setBaseUri(BASE_URI)
-                .setBasePath(BASE_PATH)
+                .setBaseUri(cfg.baseUrl())
+                .setBasePath(cfg.basePath())
                 .addHeader("Accept", JSON.getAcceptHeader());
     }
 

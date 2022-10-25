@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class MainPage {
+public class MainPage extends BasePage {
 
     private final By userNameText = By.xpath("//*[contains(@class, 'profile')]//span");
     private final By playersButton = By.xpath("//*[contains(text(),'Players online / total')]");
@@ -13,7 +13,7 @@ public class MainPage {
     private WebDriver driver;
 
     public MainPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
 

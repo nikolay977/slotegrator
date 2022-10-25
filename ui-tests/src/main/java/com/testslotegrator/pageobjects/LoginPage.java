@@ -8,15 +8,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
 
     private final By loginInput = By.id("UserLogin_username");
     private final By passwordInput = By.id("UserLogin_password");
     private final By submitButton = By.xpath("//input[@value='Sign in'][@type='submit']");
-    private WebDriver driver;
 
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public LoginPage loginSet(String text) {

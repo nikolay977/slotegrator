@@ -10,9 +10,9 @@ import static io.restassured.RestAssured.given;
 
 public class AuthenticationApiClient extends ApiClient {
 
-    private static String BASIC_AUTH_NAME = "front_2d6b0a8391742f5d789d7d915755e09e";
-    private static String BASIC_AUTH_PASS = "";
-    private static String OATH2_TOKEN = "/oauth2/token";
+    private static String BASIC_AUTH_NAME = cfg.userName();
+    private static String BASIC_AUTH_PASS = cfg.pass();
+    private static String OATH2_TOKEN = cfg.oauth2Token();
 
     public ValidatableResponse getToken() {
         Map<String, String> params = new HashMap<>();
